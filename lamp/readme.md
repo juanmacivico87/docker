@@ -1,6 +1,6 @@
 # DOCKER LAMP
 
-This repository contains a Docker image for creating a LAMP development environment.
+This directory contains a Docker image for creating a LAMP development environment.
 
 ## How to install
 
