@@ -2,6 +2,15 @@
 
 This directory contains a Docker image for creating a LAMP development environment.
 
+## What is contained in this Docker image??
+
+- All features included in [php:8.1-apache](https://hub.docker.com/layers/library/php/8.1-apache/images/sha256-5d686eaf1235b1c1900dcae1199c3b42857d569a84ce2e304621e3f81a149868) image
+- The following PHP modules: ```Core, ctype, curl, date, dom, fileinfo, filter, ftp, gd, hash, iconv, intl, json, libxml, mbstring, mysqli, mysqlnd, openssl, pcre, PDO, pdo_mysql, pdo_sqlite, Phar, posix, readline, Reflection, session, SimpleXML, soap, sodium, SPL, sqlite3, standard, tokenizer, xdebug, xml, xmlreader, xmlrpc, xmlwriter, xsl, Zend OPcache, zip, zlib```
+- [Composer](https://getcomposer.org/)
+- Virtual host configuration to access to the project through http://test.docker.com URL
+- Configuration for PHP ```Xdebug``` module
+- Sample PHP project
+
 ## How to install
 
 I think you have already cloned the [repository](https://github.com/juanmacivico87/docker) containing the image, so let's go straight to the steps to create your container: 
