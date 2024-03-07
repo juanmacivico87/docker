@@ -1,0 +1,33 @@
+services:
+    db:
+        image: mysql:8.0.23
+        # Replace with your real project name (example: db_awesome_project)
+        container_name: db_php_mysql
+        command: --default-authentication-plugin=mysql_native_password
+        volumes:
+            - db_app:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        ports: 
+            - 3306:3306
+        networks:
+            - default
+    app:
+        # Replace with your real project name (example: app_awesome_project)
+        container_name: app_php_mysql
+        build:
+            context: ./lamp
+        ports: 
+            - 80:80
+        volumes:
+            - ./lamp/app:/var/www/html
+        links:
+            - db
+        networks:
+            - default
+volumes:
+    db_app:
